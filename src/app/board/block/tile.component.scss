@@ -20,7 +20,7 @@
   }
 
   &.flagged{
-    background-image: url('/assets/flag.svg');
+    background-image: url('./assets/flag.svg');
     background-size: cover; /* Adjusts size */
     background-position: center; /* Centers image */
     background-repeat: no-repeat; /* Prevents repetition */
