@@ -1,0 +1,13 @@
+.board{
+  border: 2px solid rgb(119, 117, 117);
+  .row{
+    height: 40px;
+  }
+}
+
+.status{
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

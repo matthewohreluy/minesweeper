@@ -1,0 +1,19 @@
+<div class="board">
+  @for(row of board();let i = $index; track i){
+  <div class="row">
+    @for(tile of row; track tile.id){
+    <app-tile
+      [tile]="tile"
+      (select)="onRevealTile($event)"
+      (toFlag)="onFlagTile($event)"
+    />
+    }
+  </div>
+  }
+</div>
+
+@if(isWin() !== null){
+<div class="status">
+  <h2>{{ isWin() === true ? "You Win" : "You Lose" }}</h2>
+</div>
+}

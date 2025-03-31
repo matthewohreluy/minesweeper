@@ -1,0 +1,33 @@
+<div
+  class="tile"
+  [class]="
+    tile().row % 2 == 0
+      ? tile().col % 2 === 0
+        ? 'even'
+        : 'odd'
+      : tile().col % 2 === 0
+      ? 'odd'
+      : 'even'
+  "
+  [class.flagged]="tile().isFlagged"
+  (click)="revealTile(tile().row, tile().col)"
+  (contextmenu)="flagTile($event, tile().row, tile().col)"
+>
+  <!-- {{ tile().row + "," + tile().col }} -->
+  <!-- @if(tile().isRevealed){ @if(tile().isMine){
+  <div class="revealed mine">
+    <img src="assets/bomb.svg" alt="" />
+  </div>
+  }@else {
+  <div class="revealed no-mine"></div>
+  } } -->
+  @if(tile().isRevealed){ @if(tile().isMine){
+  <div class="revealed mine">
+    <img src="assets/bomb.svg" alt="" />
+  </div>
+  }@else {
+  <div class="revealed no-mine">
+    {{ tile().adjacentMines ? tile().adjacentMines : "" }}
+  </div>
+  } }
+</div>
